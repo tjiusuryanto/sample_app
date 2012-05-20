@@ -1,5 +1,8 @@
 SampleApp::Application.routes.draw do
-  get "users/new"
+
+  # Removed the [get "users/new"] line because resource:users
+  # will handle ALL RESTful required actions
+  resources :users
 
   root to: 'static_pages#home'
 
