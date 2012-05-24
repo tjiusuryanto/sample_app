@@ -1,0 +1,33 @@
+route->action (controller) -> template(view)
+
+Ruby on Rails Tutorial Sample App | <%= yield(:title) %>
+
+Adding a new page:
+- add a new route
+- add a new controller action
+- add the view
+Creating a new Controller
+rails generate controller Users new --no-test-framework
+
+Creating a new test rspec test script
+rails generate integration_test user_pages
+
+Rails generate:
+- Model (just the model)
+- Controller (Controller + view associated with actions)
+- Scaffold (Model + controller + views for multiple database interactions)
+
+After changing the data model, we need to migrate the database to
+align our data structure with our web application
+$ bundle exec rake db:migrate
+
+Development and test environment have separate data models, so models we created
+in the development will not be visible in the test environment, and thus we need
+to run the command:
+$ bundle exec rake db:test:prepare
+
+to tell the test database that the database has the structure that we have created
+in the development
+
+rails generate migration add_index_to_users_email
+rails generate migration add_password_digest_to_users password_digest:string

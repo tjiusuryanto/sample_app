@@ -1,0 +1,99 @@
+# Initial setup (one time per computer)
+$ git config --global user.name "Your Name"
+$ git config --global user.email your.email@example.com
+
+# Optional, but you can use "co" instead of "checkout" as the alias when checking out
+$ git config --global alias.co checkout
+
+# Go to the project root and execute the line below to initialize repository
+$ git init
+
+# To ignore some files, edit the file .gitignore using your favorite text editor
+
+# Add files in the current directory (project root) to your git repository
+$ git init
+
+# Check status of the files in the staging area (has pending changes)
+$ git status
+
+# Commit changes to the repository. -m means message
+$ git commit -m "Initial commit"
+
+# Spawn the commit log
+$ git log
+
+# From http://help.github.com/linux-set-up-git/
+# To test out git ssh
+$ ssh -T git@github.com
+
+# Go to Git SSH directory
+$ cd ~/.ssh
+
+# Backup the old ssh key
+$ ls
+$ mkdir key_backup
+$ cp id_rsa* key_backup
+$ rm id_rsa*
+
+# Generate a new SSH key (don't forget to enter a passphrase)
+$ ssh-keygen -t rsa -C "your_email@youremail.com"
+
+# Add it to the Git Hub
+
+# Push the project into the Git
+$ git remote add origin git@github.com:<username>/first_app.git
+$ git push -u origin master
+
+# Branching
+$ git checkout -b modify-README
+$ git branch
+
+
+
+
+
+
+
+
+
+
+
+
+# From GitHub website
+Global setup:
+
+ Set up git
+  git config --global user.name "Your Name"
+  git config --global user.email tjiu.suryanto@gmail.com
+Add your public key
+      
+
+Next steps:
+
+  mkdir first_app
+  cd first_app
+  git init
+  touch README
+  git add README
+  git commit -m 'first commit'
+  git remote add origin git@github.com:tjiusuryanto/first_app.git
+  git push -u origin master
+      
+
+Existing Git Repo?
+
+  cd existing_git_repo
+  git remote add origin git@github.com:tjiusuryanto/first_app.git
+  git push -u origin master
+      
+
+Importing a Subversion Repo?
+
+  Check out the guide for step by step instructions.
+      
+
+When you're done:
+
+  Continue
+
+
