@@ -2,12 +2,16 @@ SampleApp::Application.routes.draw do
 
   # Removed the [get "users/new"] line because resource:users
   # will handle ALL RESTful required actions
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   # RESTful routes for session controller
-  resources :sessions, only: [:new, :create, :destroy]
-
-  resources :microposts, only: [:create, :destroy]
+  resources :sessions,      only: [:new, :create, :destroy]
+  resources :microposts,    only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
   root to: 'static_pages#home'
 
