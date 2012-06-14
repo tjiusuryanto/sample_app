@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    # Covered by the method correct_user
     # @user = User.find(params[:id])
   end
 
